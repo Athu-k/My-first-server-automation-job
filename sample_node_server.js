@@ -6,7 +6,7 @@ var handle = function(req,res){
 	if (req.url == "/doc") {
 		res.end("Here are your documents")
 	} else {
-       		res.end('Hello World');
+       		res.end('Hello World 2');
 	}
 }
 
