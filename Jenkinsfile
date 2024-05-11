@@ -1,14 +1,12 @@
-var http = require('http')
+pipeline {
+    agent any
 
-var handle = function(req,res){
-        console.log("url", req.url)
-        console.log("Reached here")
-        if (req.url == "/doc") {
-                res.end("Here are your documents")
-        } else {
-                res.end('Hello World 2');
+    stages {
+        stage('Hello') {
+            steps {
+                node sample_node_server.js
+            }
         }
+    }
 }
 
-
-http.createServer(handle).listen(1090)
